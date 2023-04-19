@@ -1,32 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import Login from "./components/Login";
 
 function App() {
-  const a = 1
-  const b = 2 
+  const a = 1;
+  const b = 2;
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <ul>
-          <li>Apples</li>
-          <li>Oranges</li>
-          <li>Pears</li>
-        </ul>
-        <h1 data-testid="mytestid">Hello</h1>
-        <span title="sum">{a+b}</span>
-      </header>
+      <ul>
+        <li>Apples</li>
+        <li>Oranges</li>
+        <li>Pears</li>
+      </ul>
+      <h1 data-testid="mytestid">Hello</h1>
+      <span title="sum">{a + b}</span>
+
+      <div>
+        <Login />
+      </div>
     </div>
   );
 }
