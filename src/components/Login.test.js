@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import Login from "./Login";
+import Login from '../components/Login'
 
 test("username input should be rendered", () => {
   render(<Login />);
@@ -44,6 +44,11 @@ test("button should be rendered", () => {
   expect(loginButtonElement).toBeInTheDocument();
 });
 test("button should be disabled", () => {
+  render(<Login />);
+  const loginButtonElement = screen.getByRole("button");
+  expect(loginButtonElement).not.toHaveTextContent(/please wait/i);
+});
+test("loading should not be rendered", () => {
   render(<Login />);
   const loginButtonElement = screen.getByRole("button");
   expect(loginButtonElement).toBeDisabled();
