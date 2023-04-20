@@ -54,3 +54,14 @@ test("error message should not be visiable", () => {
   const errorElement = screen.getByTestId("error");
   expect(errorElement).not.toBeVisible();
 });
+
+test("button should not be disabled when input exists", () => {
+    render(<Login />);
+    const loginButtonElement = screen.getByRole("button");
+    const testValue  ="test"
+    const userInputElement = screen.getByPlaceholderText(/username/i);
+    const passwordInputElement = screen.getByPlaceholderText(/password/i);
+    fireEvent.change(userInputElement,{target:{value:testValue}})
+    fireEvent.change(passwordInputElement,{target:{value:testValue}})
+    expect(loginButtonElement).not.toBeDisabled();
+  });
